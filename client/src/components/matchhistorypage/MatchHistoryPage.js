@@ -5,6 +5,7 @@ import axios from 'axios'
 import { BackButtonContainer } from '../statspage/styles'
 import { MdOutlineArrowBackIosNew } from "react-icons/md"
 import { useNavigate } from 'react-router-dom'
+import LoadingPage from '../loadingpage/LoadingPage'
 
 
 
@@ -102,8 +103,6 @@ const MatchHistoryPage = () => {
         navigate('/')
     }
 
-
-
     // first step is to start a function 
     // find the matching name from participants
     // normally if array, loop through the array  
@@ -111,7 +110,7 @@ const MatchHistoryPage = () => {
     // return the participant index at which the name matched
 
     if (loaded === false) {
-        return (loaded)
+        return (LoadingPage())
     } else if (loaded && MatchHistory[0])
         return (
             <Main>
