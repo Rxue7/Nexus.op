@@ -6,6 +6,7 @@ const SearchPage = () => {
 
     const [name, setName] = useState();
     const navigate = useNavigate();
+
     const handleOnChange = (e) => {
         e.preventDefault();
         const value = e.target.value;
@@ -29,7 +30,7 @@ const SearchPage = () => {
                 <Search onSubmit={handleSubmit}>
                     <SearchBox type="text" placeholder='Search for Summoner' onChange={handleOnChange}></SearchBox>
                     <SearchButton>
-                        <SearchIcon type='submit' />
+                        <SearchIcon />
                     </SearchButton>
                 </Search>
             </SubBody>

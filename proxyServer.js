@@ -8,7 +8,7 @@ require('dotenv').config()
 // this function blocks cors error 
 app.use(cors());
 app.listen(4000, function () {
-    console.log("testing")
+
 })
 
 // using apikey to get summoner icon, names and levels
@@ -63,8 +63,6 @@ app.get("/playermatch", async (req, res) => {
     const matchHistory = await axios.get(apiCallMatch)
         // Calling line 60, 
         .then(response => response.data)
-        // storing the data that you get from line 60 into matchHistory.
-        // looks like this
         //["NA1_4343074430","NA1_4342002130","NA1_4339376105","NA1_4336755216","NA1_4336669353","NA1_4336661621",
         //"NA1_4336185236","NA1_4336190922","NA1_4332685733","NA1_4332174379","NA1_4331659018","NA1_4331653679",
         //"NA1_4331476174","NA1_4329718218","NA1_4329733141","NA1_4329678675","NA1_4329464036","NA1_4329402104",

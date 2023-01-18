@@ -30,11 +30,11 @@ const StatsPage = () => {
                 }
             })
             .catch(function (error) {
-                console.log(error)
+
 
             })
     }, [])
-    console.log(playerData)
+
 
     const [playerRank, setPlayerRank] = useState({})
     //    params passes the id into the back end
@@ -47,7 +47,7 @@ const StatsPage = () => {
 
             })
     }, [])
-    console.log(playerRank)
+
 
     function MatchType(findMatchType) {
         if (findMatchType === "RANKED_SOLO_5x5") {

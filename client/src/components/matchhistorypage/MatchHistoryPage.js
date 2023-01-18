@@ -26,12 +26,12 @@ const MatchHistoryPage = () => {
                 }
             })
             .catch(function (error) {
-                console.log(error)
+
 
             })
     }, [])
-    console.log(MatchHistory)
-    //console.log(MatchHistory[0].info.participants[0])
+
+
 
     function timeConverter(UNIX_timestamp) {
         var a = new Date(UNIX_timestamp);
@@ -44,23 +44,9 @@ const MatchHistoryPage = () => {
     }
 
     function minuteConverter(s) {
-        //61 
-        //61 % 60 = 1
-        // 61 - (61 %= 60 ) 
-        //s was 61
-        // s is 1
-        //61 - (1) /60 = 1:01
-        // 9 < 1 
-
-        //71
-        //71 - (11) / 60  = 1minute 
-        //s= 11 
-        // 9<11 
-        // 1:11
         return (s - (s %= 60)) / 60 + (9 < s ? ':' : ':0') + s
     }
 
-    // Snortoro, chinpression, 
     function validSummoner(checkPlayerName) {
         for (let i = 0; i < 10; i++) {
             if (checkPlayerName[i].summonerName.toLowerCase() === id.toLowerCase()) {
@@ -68,7 +54,6 @@ const MatchHistoryPage = () => {
             }
         }
     }
-    // summoner1Id: for Summoner spells
 
     function ChangeSummonerSpell(validSummoner) {
         switch (validSummoner) {
@@ -102,12 +87,6 @@ const MatchHistoryPage = () => {
     function routeHome() {
         navigate('/')
     }
-
-    // first step is to start a function 
-    // find the matching name from participants
-    // normally if array, loop through the array  
-    // check if the name match with id 
-    // return the participant index at which the name matched
 
     if (loaded === false) {
         return (LoadingPage())
@@ -209,30 +188,3 @@ const MatchHistoryPage = () => {
 
 export default MatchHistoryPage
 
-{/* <MatchBox>
-<div>
-    {matchData.info.gameMode}
-    {timeConverter(matchData.info.gameEndTimestamp)}
-    {minuteConverter(matchData.info.gameDuration)}
-
-
-    <p style={{ color: "red" }}> kills: {validSummoner(matchData.info.participants).kills} </p>
-    <p style={{ color: "red" }}> deaths: {validSummoner(matchData.info.participants).deaths} </p>
-    <p style={{ color: "red" }}> assists: {validSummoner(matchData.info.participants).assists} </p>
-    <img className="imageChamp1" alt="" src={"http://ddragon.leagueoflegends.com/cdn/12.8.1/img/champion/" + validSummoner(matchData.info.participants).championName + ".png"} />
-
-</div>
-<div>
-    {matchData.info.participants.map((data) =>
-        <SummonerPlayersBox>
-            <p> {data.summonerName} </p>
-            <ChampionContainer>
-                <ChampionList alt="" src={"http://ddragon.leagueoflegends.com/cdn/12.8.1/img/champion/" + data.championName + ".png"} />
-            </ChampionContainer>
-        </SummonerPlayersBox>
-    )
-    }
-</div>
-
-
-</MatchBox> */}

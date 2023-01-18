@@ -17,7 +17,8 @@ z-index:-10;
 `
 export const TopBarContainer = styled.div`
 display:flex;
-height:100px;
+position: fixed;
+height:100%;
 justify-content:flex-start;
 align-items:flex-start;
 `
