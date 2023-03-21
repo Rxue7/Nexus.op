@@ -33,7 +33,7 @@ function GetPlayerId(playerName) {
         .catch(error => error)
 }
 
-//  using the function above you 
+// using the function above you 
 //get the player Id to get the rank information
 
 app.get("/playerrank", async (req, res) => {
@@ -59,9 +59,7 @@ app.get("/playermatch", async (req, res) => {
     const playerName = req.query.username
     const puuid = await GetPuuid(playerName)
     const apiCallMatch = "https://americas.api.riotgames.com/lol/match/v5/matches/by-puuid/" + puuid + "/ids" + "?api_key=" + apiKey
-    // https://americas.api.riotgames.com/lol/match/v5/matches/by-puuid/puuid/ids/?api_key=WEJRKNFEASKDNFSDJKNFJKSDNFJSNDJKFNJK 
     const matchHistory = await axios.get(apiCallMatch)
-        // Calling line 60, 
         .then(response => response.data)
         //["NA1_4343074430","NA1_4342002130","NA1_4339376105","NA1_4336755216","NA1_4336669353","NA1_4336661621",
         //"NA1_4336185236","NA1_4336190922","NA1_4332685733","NA1_4332174379","NA1_4331659018","NA1_4331653679",
